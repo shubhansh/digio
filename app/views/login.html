@@ -1,0 +1,36 @@
+
+<script src="https://apis.google.com/js/platform.js" defer></script>
+<form name='loginForm' ng-submit='loginAction(loginForm)' class="login-view">
+    <div class="form-group  row">
+        <div class="col-xs-12 col-sm-2 col-sm-offset-5 text-center">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-2 mid-line">
+        </div>
+        <div class='col-xs-2 text-center'>
+            OR
+        </div>
+        <div class='col-xs-3 mid-line'>
+        </div>
+    </div>
+    <br>
+    <div class="form-group text-center row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <label><small>Proceed with your Email address</small>
+                <input type="email" class="form-control" id="" placeholder="" ng-required="true" ng-model="loginObj.emailId">
+            </label>
+        </div>
+    </div>
+    <div class="form-group text-center row">
+        <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+            <label class="text-center h5">
+                <small>By continuing, I confirm to the <strong>Terms and Service</strong> and
+                    <strong>Privacy Policy</strong> of <a href="https://www.digio.in">Digio.in</a></small>
+            </label>
+            <button type="submit" class="btn btn-default btn-block btn-primary">CONTINUE</button>
+        </div>
+    </div>
+</form>

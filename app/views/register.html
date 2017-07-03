@@ -1,0 +1,75 @@
+<div class="register-view">
+    <div class="modal fade" id="registration-modal" role="dialog">
+        <div class="modal-content" ng-show='!register.submitted'>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <h3><strong>Register Aadhaar</strong></h3>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <div class='row'>
+                        <div class='col-xs-3'>
+                            <img src="images/1200px-Aadhaar_Logo.svg.png">
+                        </div>
+                        <div class='col-xs-6'>
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-disabled="!enabledInputs.aadhaar" placeholder="12 digit Aadhar Number" ng-pattern="aadharPattern" ng-model="register.aadhaar">
+                            </div>
+                        </div>
+                        <div class='col-xs-3'>
+                            <div class="btn bg-gray btn-block btn-default" ng-click="verifyAadhar(register.aadhaar)" ng-disabled="register.aadhaar===undefined">Verify</div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs-9 col-xs-offset-3'>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="register.kyc" ng-disabled="!enabledInputs.kyc" ng-change="kycChange(register.kyc)"> I agree to sign this KYC document to get started.
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-xs-4 col-xs-offset-5'>
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-disabled="!enabledInputs.otp"  placeholder="6 digit OTP" ng-pattern="otpPattern" ng-model="register.otp">
+                            </div>
+                        </div>
+                        <div class='col-xs-3'>
+                            <div class="btn bg-gray btn-block btn-default" ng-click='verifyOTP(register.otp)' ng-disabled="register.otp===undefined" >Submit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content" ng-show='register.submitted'>
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <h3><strong>{{registrationStatus.statusText}}</strong></h3>
+                    <h5 class="text-primary">Mutual non-disclosure aggreement.</h5>
+                    <hr>
+                </div>
+            </div>
+            <div class="row bg-success" ng-show="registrationStatus.status">
+                <div class="col-xs-10 col-xs-offset-1 ">
+                    <h4>
+                        <span class="glyphicon glyphicon-ok-circle text-success" style="font-size: 34px;"></span>
+                        <span class='text-primary'>Aadhaar Verified Successfully!</span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page-content" ng-repeat="iter in toArray(7) track by $index">
+        <p> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
+            ipsum lorem ipsum
+        </p>
+
+    </div>
+</div>
